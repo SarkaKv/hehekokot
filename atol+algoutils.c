@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// add check for more than one - -> shouldnt be accepted
+
 long int myatol(char *str)
 {
     long int sign = 1;

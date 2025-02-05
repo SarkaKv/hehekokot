@@ -12,22 +12,24 @@
 
 #include "push_swap.h"
 
-void push(s_stack **pusher, s_stack **reciever)
+
+void push(s_stack **pusher, s_stack **receiver)
 {
-    if(!*pusher)
-        return;
+    if (!*pusher) return;
+
     s_stack *hold = *pusher;
     *pusher = (*pusher)->next;
-    if(*pusher)
+
+    if (*pusher)  
         (*pusher)->prev = NULL;
-    if(!*reciever)
-    {
-        *reciever = hold;
-        return;
-    }
-    hold->next = *reciever;
-    (*reciever)->prev = hold;
-    *reciever = hold;
+
+    hold->next = *receiver;
+
+    if (*receiver)  
+        (*receiver)->prev = hold;
+
+    *receiver = hold;
+    hold->prev = NULL;
 }
 
 void pushb(s_stack **stacka, s_stack **stackb)

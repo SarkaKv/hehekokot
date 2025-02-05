@@ -39,6 +39,7 @@ void	freenoexitchar(char **numberstofree)
 		}
 		free(numberstofree); 
 	}
+	return;
 }
 
 void	freenoexitlongint(long int **numberstofree)

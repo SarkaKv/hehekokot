@@ -76,4 +76,9 @@ void				rr(s_stack **stacka, s_stack **stackb);
 void				rota(s_stack **stacka);
 void				rotting(s_stack **stack);
 
+
+// debug
+void print_stack(s_stack *stack);
+void debug_stacks(s_stack *a, s_stack *b);
+
 #endif

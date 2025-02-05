@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   instrcuts.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: skvackov <skvackov@student.42.fr>          #+#  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: skvackov <skvackov@student.42.fr>          #+#  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
 /*   Created: 2025-01-23 08:21:49 by skvackov          #+#    #+#             */
 /*   Updated: 2025-01-23 08:21:49 by skvackov         ###   ########.fr       */
 /*                                                                            */
@@ -51,9 +54,9 @@ void	sb(s_stack **stack)
 	swap12(stack);
 }
 
-void ss(s_stack **stacka, s_stack **stackb)
+void	ss(s_stack **stacka, s_stack **stackb)
 {
-    ft_putstr_fd("ss\n", 1);
+	ft_putstr_fd("ss\n", 1);
 	swap12(stacka);
 	swap12(stackb);
 }
