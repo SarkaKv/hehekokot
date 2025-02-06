@@ -113,6 +113,7 @@ void	startsort(s_stack **stacka)
 		bitnumberomax = bitnumberindex(lenghtofstack);
 		actualradics(stacka, &stackb, bitnumberomax, lenghtofstack);
 	}
+	//try check if it gets here when calling 3-5
 	freeexitstack(&stackb, 0);
 	freeexitstack(stacka, 1);
 	return ;
