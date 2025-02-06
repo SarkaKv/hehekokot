@@ -56,9 +56,9 @@ void				startsort(s_stack **stack);
 // sorting 1-5 (rest are void functions)
 void				smallsort(s_stack **stacka, s_stack **stackb,
 						int sizestack);
-void	sort3(s_stack *a, s_stack *b);
-void sort4(s_stack *a, s_stack *b);
-void sort5(s_stack  *a, s_stack *b);
+void	sort3(s_stack *a, s_stack *b, int min,int pushkey);
+void sort4(s_stack *a, s_stack *b, int min, int pushkey);
+void sort5(s_stack  *a, s_stack *b, int min, int pushkey);
 // instructs
 void				ss(s_stack **stacka, s_stack **s_stackb);
 void				sb(s_stack **stack);

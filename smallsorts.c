@@ -12,22 +12,13 @@
 
 #include "push_swap.h"
 
-
-void	sort3remix(s_stack *a, s_stack *b, int hey)
+void	sort3(s_stack *a, s_stack *b, int min, int pushkey)
 {
-	int	min;
-	int	max;
+	int max;
 
 	min = findmin(a);
 	max = findmax(a);
-    if(min == 0 && max == 2)
-        return;
-	else if (min == 0)
-	{
-		sa(&a);
-		rota(&a);
-	}
-	else if (min == 1 && max == 0)
+	if (min == 1 && max == 0)
 	{
 		rra(&a);
 		rra(&a);
@@ -41,55 +32,14 @@ void	sort3remix(s_stack *a, s_stack *b, int hey)
 	}
 	else if (min == 2 && max == 1)
 		rra(&a);
-	if(hey == 4)
-	  pusha(&a,&b);
-	else
-	{ pusha(&a, &b)
-	  pusha(&a, &b)
-	}
-	
+	while(pushkey-- > 0)
+		pusha(&a, &b);
 	freeexitstack(&b, 0);
 	freeexitstack(&a, 1);
 }
 
-void	sort3(s_stack *a, s_stack *b)
+void sort4(s_stack *a, s_stack *b, int min, int pushkey)
 {
-	(void)b;//try to delete this its a used variable
-	int	min;
-	int	max;
-
-	min = findmin(a);
-	max = findmax(a);
-    if(min == 0 && max == 2)
-        return;
-	else if (min == 0)
-	{
-		sa(&a);
-		rota(&a);
-	}
-	else if (min == 1 && max == 0)
-	{
-		rra(&a);
-		rra(&a);
-	}
-	else if (min == 1 && max == 2)
-		sa(&a);
-	else if (min == 2 && max == 0)
-	{
-		sa(&a);
-		rra(&a);
-	}
-	else if (min == 2 && max == 1)
-		rra(&a);
-	freeexitstack(&b, 0);
-	freeexitstack(&a, 1);
-}
-
-void sort4(s_stack *a, s_stack *b)
-{
-    if(checkifsorted(a) == 1)
-        return;
-    int min = findmin(a);
     if(min == 1)
         sa(&a);
     else if(min == 2)
@@ -101,16 +51,12 @@ void sort4(s_stack *a, s_stack *b)
 	{
         rra(&a);
 	}
-	if (checkifsorted(a) == 1)
-		return;
     pushb(&a,&b);
-    sort3(a,b);
-    pusha(&a,&b);
+    sort3(a,b, min, pushkey);
 }
 
-void sort5(s_stack  *a, s_stack *b)
+void sort5(s_stack  *a, s_stack *b, int min, int pushkey)
 {
-    int min = findmin(a);
     if(min == 1)
         sa(&a);
     else if(min == 2)
@@ -124,18 +70,16 @@ void sort5(s_stack  *a, s_stack *b)
         rra(&a);
     }
     else if(min == 4)
-	{
         rra(&a);
-	}
-	if (checkifsorted(a) == 1)
-		return;
     pushb(&a,&b);
-    sort4(a,b);
-    pusha(&a,&b);
+    sort4(a,b, min,pushkey);
 }
 
 void	smallsort(s_stack **stacka, s_stack **stackb, int sizestack)
 {
+	int	min;
+
+	min = findmin(*stacka);
 	if (sizestack == 2)
 	{
 		if (checkifsorted(*stacka) == 0)
@@ -143,9 +87,9 @@ void	smallsort(s_stack **stacka, s_stack **stackb, int sizestack)
 		return;
 	}
 	else if (sizestack == 3)
-		sort3(*stacka, *stackb);
+		sort3(*stacka, *stackb, min, 0);
 	else if (sizestack == 4)
-		sort4(*stacka, *stackb);
+		sort4(*stacka, *stackb, min, 1);
 	else if (sizestack == 5)
-		sort5(*stacka, *stackb);
+		sort5(*stacka, *stackb, min, 2);
 }

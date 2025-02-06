@@ -35,6 +35,8 @@ int	main(int argc, char **argv)
 	int		counter;
 	char	**numbers;
 
+	if (argc == 1)
+		return (0);
 	counter = 1;
 	if (argc == 2)
 		numbers = oneargumentcheck(argv[1]);
@@ -45,7 +47,6 @@ int	main(int argc, char **argv)
 		{
 			numbers[counter - 1] = safemalloc(sizeof(char)
 					* (ft_strlen(argv[counter]) + 1));
-
 			ft_strcpy(numbers[counter - 1], argv[counter]);
 			checkinput(numbers[counter - 1], numbers);
 			counter++;
