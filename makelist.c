@@ -25,10 +25,11 @@ void	checkfordoubles(long int **original, int lenght)
 		checking = count + 1;
 		while (checking < lenght)
 		{
-			if (*original[checking] == currentcheck)
+			if (*original[checking] == currentcheck && )
 			{
 				freenoexitlongint(original);
-				exit(0);
+				ft_putstr_fd("Error\n", 1);
+				exit(1);
 			}
 			checking++;
 		}

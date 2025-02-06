@@ -12,14 +12,21 @@
 
 #include "push_swap.h"
 
+static void	pleasedontf(t_stack *a, t_stack *b)
+{
+	freeexitstack(&b, 0);
+	freeexitstack(&a, 1);
+}
+
 void	sort3(t_stack *a, t_stack *b, int min, int pushkey)
 {
 	int	max;
+
 	min = findmin(a);
 	max = findmax(a);
 	if (min == 1 && max == 0)
 	{
-		while(min-- >= 0)
+		while (min-- >= 0)
 			rra(&a);
 	}
 	else if (min == 0 && max == 1)
@@ -37,8 +44,7 @@ void	sort3(t_stack *a, t_stack *b, int min, int pushkey)
 	}
 	while (pushkey-- > 0)
 		pusha(&a, &b);
-	freeexitstack(&b, 0);
-	freeexitstack(&a, 1);
+	pleasedontf(a, b);
 }
 
 void	sort4(t_stack *a, t_stack *b, int min, int pushkey)

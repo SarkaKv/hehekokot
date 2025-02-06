@@ -31,7 +31,6 @@ int	checkinput(char *argv, char **numberstofree)
 		freeexit(numberstofree);
 	if (argv[0] != '-' && argv[0] != '+' && (argv[0] > '9' || argv[0] < '0'))
 	{
-		printf("goes");
 		ft_putstr_fd("Error\n", 1);
 		freeexit(numberstofree);
 	}
