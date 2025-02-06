@@ -27,9 +27,9 @@ int	checkinput(char *argv, char **numberstofree)
 	int	oki;
 
 	oki = 1;
-	if (argv == NULL)
-		freeexit(numberstofree);
-	if (argv[0] != '-' && argv[0] != '+' && (argv[0] > '9' || argv[0] < '0'))
+	if ((!argv[0]) || ((argv[0] != '-' && argv[0] != '+')
+			&& (argv[0] > '9' || argv[0] < '0')) || ((argv[0] == '-'
+				|| argv[0] == '+') && !argv[1]))
 	{
 		ft_putstr_fd("Error\n", 1);
 		freeexit(numberstofree);
