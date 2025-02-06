@@ -10,23 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 #include <limits.h>
 
-static void	callforindex(s_stack *a, int lenghtofstack)
+static void	callforindex(t_stack *a, int lengthofstack)
 {
-	s_stack	*temp;
-	s_stack	*holdhead;
+	t_stack	*temp;
+	t_stack	*smallest_node;
 	int		index;
 	int		curnumber;
-	s_stack	*smallest_node;
 
-	holdhead = a;
 	index = 0;
-	while (index < lenghtofstack)
+	while (index < lengthofstack)
 	{
-		temp = holdhead;
+		temp = a;
 		curnumber = INT_MAX;
 		smallest_node = NULL;
 		while (temp)
@@ -56,7 +53,7 @@ static int	bitnumberindex(int lenghtyfella)
 	return (bitcheck);
 }
 
-static int	actualradics(s_stack **a, s_stack **b, int bitnumberomax,
+static int	actualradics(t_stack **a, t_stack **b, int bitnumberomax,
 		int lenghtofstack)
 {
 	int	iteration;
@@ -85,7 +82,7 @@ static int	actualradics(s_stack **a, s_stack **b, int bitnumberomax,
 	return (1);
 }
 
-static void	setindextom1(s_stack *a)
+static void	setindextom1(t_stack *a)
 {
 	while (a)
 	{
@@ -94,9 +91,9 @@ static void	setindextom1(s_stack *a)
 	}
 }
 
-void	startsort(s_stack **stacka)
+void	startsort(t_stack **stacka)
 {
-	s_stack	*stackb;
+	t_stack	*stackb;
 	int		lenghtofstack;
 	int		bitnumberomax;
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skvackov <skvackov@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-12-27 16:46:26 by skvackov          #+#    #+#             */
-/*   Updated: 2024-12-27 16:46:26 by skvackov         ###   ########.fr       */
+/*   Created: 2025-02-06 09:17:43 by skvackov          #+#    #+#             */
+/*   Updated: 2025-02-06 09:17:43 by skvackov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include "./libft/libft.h"
 # include <limits.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-#include <stdio.h>
 
 typedef struct t_stack
 {
@@ -25,60 +25,45 @@ typedef struct t_stack
 	int				index;
 	struct t_stack	*next;
 	struct t_stack	*prev;
-}					s_stack;
+}	t_stack;
 
-// argumentcheking
-int					checkinput(char *argv, char **numberstofree);
-char				**oneargumentcheck(char *argv1);
-void				checkfordoubles(long int **original, int lenght);
-
-// memory helpers
-void				freeexit(char **numberstofree);
-void				*safemalloc(size_t size);
-void				freenoexitchar(char **numberstofree);
-void				freenoexitint(int **numberstofree);
-void				freeexitstack(s_stack **stack, int exit);
+int		checkinput(char *argv, char **numberstofree);
+char	**oneargumentcheck(char *argv1);
+void	checkfordoubles(long int **original, int lenght);
+void	freeexit(char **numberstofree);
+void	*safemalloc(size_t size);
+void	freenoexitchar(char **numberstofree);
+void	freenoexitint(int **numberstofree);
+void	freeexitstack(t_stack **stack, int exit);
 void	freenoexitlongint(long int **numberstofree);
-// making stack but make it stupidly complicated
-void				makenumbers(char **mynumbers);
-long int			myatol(char *str);
-void				makestack(long int **numbers);
-void				pushintostack(s_stack **stack, int currentint,
-						long int **incaseofmallocfail);
-
-// cheking for sort,lenght, index max and min
-int					checkifsorted(s_stack *stack);
-int					findmax(s_stack *stacka);
-int					findmin(s_stack *stacka);
-int					listlenght(s_stack *stacka);
-// sorting
-void				startsort(s_stack **stack);
-// sorting 1-5 (rest are void functions)
-void				smallsort(s_stack **stacka, s_stack **stackb,
-						int sizestack);
-void	sort3(s_stack *a, s_stack *b, int min,int pushkey);
-void sort4(s_stack *a, s_stack *b, int min, int pushkey);
-void sort5(s_stack  *a, s_stack *b, int min, int pushkey);
-// instructs
-void				ss(s_stack **stacka, s_stack **s_stackb);
-void				sb(s_stack **stack);
-void				sa(s_stack **stack);
-void				swap12(s_stack **stack);
-void				push(s_stack **pusher, s_stack **reciever);
-void				pushb(s_stack **stacka, s_stack **stackb);
-void				pusha(s_stack **stacka, s_stack **stackb);
-void				doublereverserot(s_stack **stacka, s_stack **s_stackb);
-void				rrb(s_stack **stackb);
-void				rra(s_stack **stacka);
-void				reverserot(s_stack **s_stack);
-void				rb(s_stack **stackb);
-void				rr(s_stack **stacka, s_stack **stackb);
-void				rota(s_stack **stacka);
-void				rotting(s_stack **stack);
-
-
-// debug
-void print_stack(s_stack *stack);
-void debug_stacks(s_stack *a, s_stack *b);
+void	makenumbers(char **mynumbers);
+long	int	myatol(char *str);
+void	makestack(long int **numbers);
+void	pushintostack(t_stack **stack, int currentint,
+			long int **incaseofmallocfail);
+int		checkifsorted(t_stack *stack);
+int		findmax(t_stack *stacka);
+int		findmin(t_stack *stacka);
+int		listlenght(t_stack *stacka);
+void	startsort(t_stack **stack);
+void	smallsort(t_stack **stacka, t_stack **stackb, int sizestack);
+void	sort3(t_stack *a, t_stack *b, int min, int pushkey);
+void	sort4(t_stack *a, t_stack *b, int min, int pushkey);
+void	sort5(t_stack *a, t_stack *b, int min, int pushkey);
+void	ss(t_stack **stacka, t_stack **t_stackb);
+void	sb(t_stack **stack);
+void	sa(t_stack **stack);
+void	swap12(t_stack **stack);
+void	push(t_stack **pusher, t_stack **reciever);
+void	pushb(t_stack **stacka, t_stack **stackb);
+void	pusha(t_stack **stacka, t_stack **stackb);
+void	doublereverserot(t_stack **stacka, t_stack **t_stackb);
+void	rrb(t_stack **stackb);
+void	rra(t_stack **stacka);
+void	reverserot(t_stack **t_stack);
+void	rb(t_stack **stackb);
+void	rr(t_stack **stacka, t_stack **stackb);
+void	rota(t_stack **stacka);
+void	rotting(t_stack **stack);
 
 #endif

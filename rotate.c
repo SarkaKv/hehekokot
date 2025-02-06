@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void	rotting(s_stack **stack)
+void	rotting(t_stack **stack)
 {
-	s_stack	*holdfirst;
-	s_stack	*holdlast;
+	t_stack	*holdfirst;
+	t_stack	*holdlast;
 
 	holdfirst = *stack;
 	holdlast = *stack;
@@ -32,19 +32,19 @@ void	rotting(s_stack **stack)
 	holdfirst->next = NULL;
 }
 
-void	rota(s_stack **stacka)
+void	rota(t_stack **stacka)
 {
 	ft_putstr_fd("ra\n", 1);
 	rotting(stacka);
 }
 
-void	rb(s_stack **stackb)
+void	rb(t_stack **stackb)
 {
 	ft_putstr_fd("rb\n", 1);
 	rotting(stackb);
 }
 
-void	rr(s_stack **stacka, s_stack **stackb)
+void	rr(t_stack **stacka, t_stack **stackb)
 {
 	ft_putstr_fd("rr\n", 1);
 	rotting(stacka);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skvackov <skvackov@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-01-08 11:03:49 by skvackov          #+#    #+#             */
-/*   Updated: 2025-01-08 11:03:49 by skvackov         ###   ########.fr       */
+/*   Created: 2025-02-06 09:35:24 by skvackov          #+#    #+#             */
+/*   Updated: 2025-02-06 09:35:24 by skvackov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	freeexit(char **numberstofree)
 {
-    int i = 0;
+	int	i;
+
+	i = 0;
 	if (numberstofree)
 	{
 		while (numberstofree[i] != NULL)
@@ -22,14 +24,16 @@ void	freeexit(char **numberstofree)
 			free(numberstofree[i]);
 			i++;
 		}
-		free(numberstofree); 
+		free(numberstofree);
 	}
 	exit(1);
 }
 
 void	freenoexitchar(char **numberstofree)
 {
-    int i = 0;
+	int	i;
+
+	i = 0;
 	if (numberstofree)
 	{
 		while (numberstofree[i] != NULL)
@@ -37,14 +41,16 @@ void	freenoexitchar(char **numberstofree)
 			free(numberstofree[i]);
 			i++;
 		}
-		free(numberstofree); 
+		free(numberstofree);
 	}
-	return;
+	return ;
 }
 
 void	freenoexitlongint(long int **numberstofree)
 {
-    int i = 0;
+	int	i;
+
+	i = 0;
 	if (numberstofree)
 	{
 		while (numberstofree[i] != NULL)
@@ -52,23 +58,25 @@ void	freenoexitlongint(long int **numberstofree)
 			free(numberstofree[i]);
 			i++;
 		}
-		free(numberstofree); 
+		free(numberstofree);
 	}
 }
 
-void freeexitstack(s_stack **stack, int exitus)
+void	freeexitstack(t_stack **stack, int exitus)
 {
-	s_stack *stack_cur = *stack;
-	s_stack *next;
-	while(stack_cur != NULL)
+	t_stack	*stack_cur;
+	t_stack	*next;
+
+	stack_cur = *stack;
+	while (stack_cur != NULL)
 	{
 		next = stack_cur->next;
 		free(stack_cur);
 		stack_cur = next;
 	}
 	*stack = NULL;
-	if(exitus == 1)
+	if (exitus == 1)
 		exit(0);
-	else 
-		return;
+	else
+		return ;
 }

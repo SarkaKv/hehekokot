@@ -15,10 +15,10 @@
 
 #include "push_swap.h"
 
-void	swap12(s_stack **stack)
+void	swap12(t_stack **stack)
 {
-	s_stack	*firstone;
-	s_stack	*secondone;
+	t_stack	*firstone;
+	t_stack	*secondone;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
@@ -42,19 +42,19 @@ void	swap12(s_stack **stack)
 	return ;
 }
 
-void	sa(s_stack **stack)
+void	sa(t_stack **stack)
 {
 	ft_putstr_fd("sa\n", 1);
 	swap12(stack);
 }
 
-void	sb(s_stack **stack)
+void	sb(t_stack **stack)
 {
 	ft_putstr_fd("sb\n", 1);
 	swap12(stack);
 }
 
-void	ss(s_stack **stacka, s_stack **stackb)
+void	ss(t_stack **stacka, t_stack **stackb)
 {
 	ft_putstr_fd("ss\n", 1);
 	swap12(stacka);

@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void	reverserot(s_stack **stack)
+void	reverserot(t_stack **stack)
 {
-	s_stack	*holdinglast;
-	s_stack	*newend;
+	t_stack	*holdinglast;
+	t_stack	*newend;
 
 	holdinglast = *stack;
 	newend = NULL;
@@ -33,19 +33,19 @@ void	reverserot(s_stack **stack)
 	*stack = holdinglast;
 }
 
-void	rra(s_stack **stacka)
+void	rra(t_stack **stacka)
 {
 	ft_putstr_fd("rra\n", 1);
 	reverserot(stacka);
 }
 
-void	rrb(s_stack **stackb)
+void	rrb(t_stack **stackb)
 {
 	ft_putstr_fd("rrb\n", 1);
 	reverserot(stackb);
 }
 
-void	doublereverserot(s_stack **stacka, s_stack **stackb)
+void	doublereverserot(t_stack **stacka, t_stack **stackb)
 {
 	ft_putstr_fd("rrr\n", 1);
 	reverserot(stacka);
