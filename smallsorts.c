@@ -15,7 +15,6 @@
 
 void	sort3remix(s_stack *a, s_stack *b, int hey)
 {
-	(void)b;
 	int	min;
 	int	max;
 
@@ -42,14 +41,20 @@ void	sort3remix(s_stack *a, s_stack *b, int hey)
 	}
 	else if (min == 2 && max == 1)
 		rra(&a);
-	pusha(&a,&b);
+	if(hey == 4)
+	  pusha(&a,&b);
+	else
+	{ pusha(&a, &b)
+	  pusha(&a, &b)
+	}
+	
 	freeexitstack(&b, 0);
 	freeexitstack(&a, 1);
 }
 
 void	sort3(s_stack *a, s_stack *b)
 {
-	(void)b;
+	(void)b;//try to delete this its a used variable
 	int	min;
 	int	max;
 
