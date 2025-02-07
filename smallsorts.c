@@ -49,6 +49,7 @@ void	sort3(t_stack *a, t_stack *b, int min, int pushkey)
 
 void	sort4(t_stack *a, t_stack *b, int min, int pushkey)
 {
+	//min = findmin(a);
 	if (min == 1)
 		sa(&a);
 	else if (min == 2)
@@ -60,12 +61,15 @@ void	sort4(t_stack *a, t_stack *b, int min, int pushkey)
 	{
 		rra(&a);
 	}
+	//if(checkifsorted(a) == 1)
+		//pleasedontf(a, b);
 	pushb(&a, &b);
 	sort3(a, b, min, pushkey);
 }
 
 void	sort5(t_stack *a, t_stack *b, int min, int pushkey)
 {
+	//min = findmin(a);
 	if (min == 1)
 		sa(&a);
 	else if (min == 2)
@@ -80,6 +84,8 @@ void	sort5(t_stack *a, t_stack *b, int min, int pushkey)
 	}
 	else if (min == 4)
 		rra(&a);
+	//if(checkifsorted(a) == 1)
+		//pleasedontf(a, b);
 	pushb(&a, &b);
 	sort4(a, b, min, pushkey);
 }
